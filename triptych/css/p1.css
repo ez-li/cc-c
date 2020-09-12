@@ -1,0 +1,122 @@
+.canvas {
+    display: inline-block;
+    margin-left: 1em;
+    font-family: 'sans-serif';
+}
+.title {
+    font-size: 2em;
+}
+.panel {
+    height: 200px;
+    width: 800px;
+    background-color: black;
+    margin: 1em 0;
+    overflow: hidden;
+}
+.p1 {
+    /* background: rgb(54,52,78); */
+    /* background: linear-gradient(180deg, rgba(54,52,78,1) 0%, rgba(144,124,115,1) 35%, rgba(87,97,99,1) 100%); */
+    overflow: hidden;
+}
+
+.clouds {
+    display: flex;
+}
+.clouds1 {
+    display: grid;
+}
+.clouds2 {
+    display: grid;
+    margin-left: -800px;
+}
+.clouds3 {
+    display: grid;
+    margin-left: -1000px;
+}
+
+.c {
+    margin-top: -50px;
+    animation: cloudsmove 10s linear infinite;
+}
+.subc {
+    animation: cloudsmove 6s linear infinite;
+}
+
+#c1 {
+    width: 200px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 150px 120px 40px 0px rgba(235,235,235,0.69);
+}
+#c2 {
+    width: 100px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 5px 100px 20px 5px rgba(235,235,235,0.69);
+}
+#c3 {
+    width: 300px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 500px 50px 50px 5px rgba(235,235,235,0.69);
+}
+#c4 {
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 300px 20px 50px 5px rgba(235,235,235,0.6);
+}
+#c5 {
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 350px 40px 50px 5px rgba(235,235,235,0.6);
+    position: absolute;
+}
+#sub1 {
+    width: 80px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 100px 100px 200px 0px rgba(205,204,200,0.5);
+}
+#sub1a {
+    width: 80px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 200px 100px 200px 0px rgba(139,138,135,0.5);
+}
+#sub2 {
+    width: 300px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 500px 50px 50px 5px rgba(205,204,200,0.5);
+}
+#sub3 {
+    width: 100px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 50px 100px 50px 5px rgba(205,204,200,0.5);
+}
+#sub4 {
+    width: 100px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 5px 100px 40px 5px rgba(205,204,200,0.5);
+}
+#sub5 {
+    width: 100px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 5px 100px 40px 5px rgba(205,204,200,0.5);
+}
+#sub5b {
+    width: 120px;
+    height: 500px;
+    border-radius: 50%;
+    box-shadow: 5px 100px 40px 5px rgba(139,138,135,0.5);
+}
+@keyframes cloudsmove {
+    0% { transform: translate3d(0%, 0, 0); }
+    /* 50% { transform: translate3d(600px, 0, 0); } */
+    100%{ transform: translate3d(100%, 0px, 0); }
+}
