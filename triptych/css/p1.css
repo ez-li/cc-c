@@ -14,8 +14,8 @@
     overflow: hidden;
 }
 .p1 {
-    /* background: rgb(54,52,78); */
-    /* background: linear-gradient(180deg, rgba(54,52,78,1) 0%, rgba(144,124,115,1) 35%, rgba(87,97,99,1) 100%); */
+    background: rgb(54,52,78);
+    background: linear-gradient(180deg, rgba(54,52,78,1) 0%, rgba(144,124,115,1) 35%, rgba(87,97,99,1) 100%);
     overflow: hidden;
 }
 

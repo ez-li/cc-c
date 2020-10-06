@@ -1,6 +1,6 @@
 .p2 {
-    /* background: rgb(54,52,78); */
-    /* background: linear-gradient(180deg, rgba(54,52,78,1) 0%, rgba(144,124,115,1) 35%, rgba(87,97,99,1) 100%); */
+    background: rgb(54,52,78);
+    background: linear-gradient(180deg, rgba(54,52,78,1) 0%, rgba(255,238,193,1) 11%, rgba(3,255,211,0.75) 100%);
     overflow: hidden;
 }
 
