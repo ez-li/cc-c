@@ -20,7 +20,8 @@ var generateBubble = () => {
         var place = makeNewPosition();
         var bb = document.querySelectorAll(".bubble");
         console.log(bb)
-        $(bb).animate({ top: place[0], left: place[1] }, Math.random() * 2000, () => {
+        bb.forEach(())
+        $(bb).animate({ top: place[0], left: place[1] }, Math.random(), () => {
             float(b);
         });
     };

@@ -1,48 +1,116 @@
-// var canvas = document.getElementById("c");
-// var ctx = canvas.getContext("2d");
-// var img = document.getElementById("scream"); // html id of image
-// ctx.drawImage(img, 10, 10);
+var $c = $('#c'),
+    $window = $(window);
 
-var canvas = new fabric.Canvas('c');
-
-var rect = new fabric.Rect({
-    left: 200,
-    top: 250,
-    fill: 'blue',
-    width: 200,
-    height: 200
+$c.attr({
+    width: $window.width(),
+    height: $window.height()
 });
 
-// canvas.add(rect);
 
-// elbow
+const canvas = new fabric.Canvas('c');
 
 const addThing = (thing) => {
     fabric.Image.fromURL(thing, (img) => {
-        img.scale(0.5)
-        canvas.add(img);
+        var randX = Math.random() * ($window.width() - (img.width / 4));
+        var randY = Math.random() * ($window.height() - (img.height / 4));
+        img.scale(.5)
+        canvas.add(img.set({
+            left: randX,
+            top: randY
+        }));
     });
 }
 
-var elbow = 'assets/elbow.png';
-var metalRing1 = 'assets/metal-ring1.png';
-var metalRing2 = 'assets/metal-ring2.png';
-var threadedRing = 'assets/threaded-ring.png';
-var knot = 'assets/knot.png';
+const changeBg = (bg) => {
+    fabric.Image.fromURL(bg, function (img) {
+        canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+            scaleX: canvas.width / img.width,
+            scaleY: canvas.height / img.height
+        });
+    });
+}
 
-var rock1 = 'assets/rock1.png';
-var rock2 = 'assets/rock2.png';
-var rock3 = 'assets/rock3.png';
-var rock4 = 'assets/rock4.png';
-var cloud1 = 'assets/cloud1.png';
-var cloud2 = 'assets/cloud2.png';
-var leaf1 = 'assets/leaf1.png';
-var leafDead = 'assets/leaf-dead.png';
-var leafFan = 'assets/leaf-fan.png';
-var leafRed = 'assets/leaf-red.png';
-var leafThin = 'assets/leaf-thin.png';
-var orange = 'assets/orange.png';
+const bgConcrete = 'assets/bg-concrete.jpeg';
+const bgGrass = 'assets/bg-grass.jpg';
+const bgSand = 'assets/bg-sand.jpg';
+const bgSky = 'assets/bg-sky.jpg';
 
-addThing(elbow);
-addThing(rock1);
-addThing(cloud1)
+const elbow = 'assets/elbow.png';
+const metalRing1 = 'assets/metal-ring1.png';
+const metalRing2 = 'assets/metal-ring2.png';
+const threadedRing = 'assets/threaded-ring.png';
+const knot = 'assets/knot.png';
+const metalCan = 'assets/metal-can.png';
+const metalBall = 'assets/metal-ball.png';
+const metalPlate = 'assets/metal-plate.png';
+const circularSaw = 'assets/circular-saw.png';
+const nail = 'assets/nail.png';
+
+const rock1 = 'assets/rock1.png';
+const rock2 = 'assets/rock2.png';
+const rock3 = 'assets/rock3.png';
+const rock4 = 'assets/rock4.png';
+const cloud1 = 'assets/cloud1.png';
+const cloud2 = 'assets/cloud2.png';
+const leafDead = 'assets/leaf-dead.png';
+const leafRed = 'assets/leaf-red.png';
+const leafThin = 'assets/leaf-thin.png';
+
+const natureThings = [rock1, rock2, rock3,
+    cloud1, cloud2, leafDead,
+    leafRed, leafThin];
+
+const machineThings = [elbow, metalRing1, metalRing2,
+    threadedRing, knot, metalBall, metalPlate, circularSaw, nail];
+
+const backgrounds = [bgConcrete, bgSand, bgSky];
+
+const randomThings = () => {
+    const pickNatureThing = () => natureThings[Math.floor(Math.random() * natureThings.length)];
+    const pickMachineThing = () => machineThings[Math.floor(Math.random() * machineThings.length)];
+
+    const randomExtraThing = Math.random();
+    const pickExtraThing = () => {
+        if (randomExtraThing < .5) {
+            return pickNatureThing();
+        } else {
+            return pickMachineThing();
+        }
+    }
+
+    const natureThing = pickNatureThing();
+    const machineThing = pickMachineThing();
+    const extraThing = pickExtraThing();
+
+    const pickBg = () => backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    const bg = pickBg();
+
+    // addThing(natureThing);
+    // addThing(machineThing);
+    // addThing(extraThing);
+    // changeBg(bg)
+
+    // addThing(leafRed);
+    // addThing(elbow);
+    // addThing(rock1);
+    // changeBg(bgSand);
+
+    addThing(metalRing1)
+    addThing(metalBall)
+    addThing(metalRing2)
+    addThing(elbow)
+    addThing(leafDead)
+    addThing(cloud1)
+    addThing(rock1)
+    addThing(leafRed)
+    addThing(threadedRing)
+
+    changeBg(bgSky);
+
+}
+
+randomThings();
+
+
+// addThing
+// changeBg
